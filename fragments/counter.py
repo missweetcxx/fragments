@@ -1,3 +1,14 @@
+#
+# Create on 1/30/2018
+#
+# Author: Sylvia
+#
+
+"""
+Counter
+Count number of time for each word occurs in a file, and list most common words with corresponding occurrence times.
+"""
+
 import io
 import re
 from os import path
