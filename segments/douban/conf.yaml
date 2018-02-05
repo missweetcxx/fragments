@@ -1,0 +1,20 @@
+---
+HTTP:
+  URL: 'https://movie.douban.com/top250'
+  USER_AGENT : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+
+PATH:
+  MOVIE_ITEMS: '//*[@id="content"]/div/div[1]/ol/li/div[@class="item"]'
+  MOVIE_ID: 'div[@class="pic"]/em/text()'
+  MOVIE_TITLE: 'div[@class="info"]/div[@class="hd"]/a/span[1]/text()'
+  MOVIE_SCORE: 'div[@class="info"]/div[@class="bd"]/div[@class="star"]/span[@class="rating_num"]/text()'
+  MOVIE_DESC: 'div[@class="info"]/div[@class="bd"]/p[@class="quote"]/span[@class="inq"]/text()'
+  MOVIE_IMG_ADDR: 'div[@class="pic"]/a/img/@src'
+
+FILE:
+  RECORDS: './douban_movie_top250.txt'
+  IMAGES_DIR: 'Top250_movie_images'
+
+FORMAT:
+  OUTPUT: 'id:{}, title: {}, score:{}, description:{}'
+  IMG: "./{}/{}_{}.jpg"
