@@ -10,11 +10,13 @@ PATH:
   MOVIE_SCORE: 'div[@class="info"]/div[@class="bd"]/div[@class="star"]/span[@class="rating_num"]/text()'
   MOVIE_DESC: 'div[@class="info"]/div[@class="bd"]/p[@class="quote"]/span[@class="inq"]/text()'
   MOVIE_IMG_ADDR: 'div[@class="pic"]/a/img/@src'
+  MOVIE_INFO: 'div[@class="info"]/div[@class="bd"]/p[1]/text()'
 
 FILE:
-  RECORDS: './douban_movie_top250.txt'
-  IMAGES_DIR: 'Top250_movie_images'
+  RECORDS: 'result_files/douban_movie_top250.txt'
+  IMAGES_DIR: 'result_files/Top250_movie_images'
+  CLASSIFICATION: 'result_files/douban_movie_classification.txt'
 
 FORMAT:
-  OUTPUT: 'id:{}, title: {}, score:{}, description:{}'
+  TOP_OUTPUT: 'id:{}, title: {}, score:{}, description:{}'
   IMG: "./{}/{}_{}.jpg"
