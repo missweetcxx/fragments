@@ -16,3 +16,4 @@ class FilePath:
 class Tag:
     COUNT = {}
     SCORE = {}
+    AVG = {}
