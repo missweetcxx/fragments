@@ -51,5 +51,5 @@ class Realizer:
 
 
 if __name__ == '__main__':
-    print Realizer.my_stripper('  cool  ')
-    print Realizer.my_upper('cool')
+    print(Realizer.my_stripper('  cool  '))
+    print(Realizer.my_upper('cool'))
