@@ -27,7 +27,7 @@ def main():
         get_classification(id)
 
     # output result
-    OutputUtils.classification()
+    OutputUtils.classification(sort_by_count=False)
 
 
 if __name__ == '__main__':

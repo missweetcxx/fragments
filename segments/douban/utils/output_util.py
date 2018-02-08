@@ -30,12 +30,12 @@ class OutputUtils:
                 tag_list = sorted(Tag.COUNT.items(), key=lambda item: item[1], reverse=True)
                 for record in tag_list:
                     key, value = record[0], record[1]
-                    tmp_data = '{}共有{}部，均分{}'.format(key, value, Tag.AVG[key]) + "\n"
+                    tmp_data = '[{}]共有{}部，均分{}'.format(key, value, Tag.AVG[key]) + "\n"
                     f.write(tmp_data.encode("utf-8"))
 
             else:
                 tag_list = sorted(Tag.AVG.items(), key=lambda item: item[1], reverse=True)
                 for record in tag_list:
                     key, value = record[0], record[1]
-                    tmp_data = '{}共有{}部，均分{}'.format(key, Tag.COUNT[key], value) + "\n"
+                    tmp_data = '[{}]共有{}部，均分{}'.format(key, Tag.COUNT[key], value) + "\n"
                     f.write(tmp_data.encode("utf-8"))
