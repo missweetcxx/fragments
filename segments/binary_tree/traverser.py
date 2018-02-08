@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from binary_tree import BinaryTree
+from segments.binary_tree.binary_tree import BinaryTree
 
 
 class Traverser(BinaryTree):

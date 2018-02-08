@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from node import Node
+from segments.binary_tree.node import Node
 
 
 class BinaryTree(object):
