@@ -20,9 +20,22 @@ class OutputUtils:
             f.write(image_data)
 
     @staticmethod
-    def classification():
+    def classification(sort_by_count=True):
+        for key, value in Tag.COUNT.items():
+            avg_score = round(Tag.SCORE.get(key, 0) / value, 2)
+            Tag.AVG[key] = avg_score
+
         with open(CONFIG['FILE']['CLASSIFICATION'], "wb") as f:
-            for key, value in Tag.COUNT.items():
-                avg_score = round(Tag.SCORE.get(key, 0) / value, 2)
-                tmp_data = '{}共有{}部，均分{}'.format(key, value, avg_score) + "\n"
-                f.write(tmp_data.encode("utf-8"))
+            if sort_by_count is True:
+                tag_list = sorted(Tag.COUNT.items(), key=lambda item: item[1], reverse=True)
+                for record in tag_list:
+                    key, value = record[0], record[1]
+                    tmp_data = '{}共有{}部，均分{}'.format(key, value, Tag.AVG[key]) + "\n"
+                    f.write(tmp_data.encode("utf-8"))
+
+            else:
+                tag_list = sorted(Tag.AVG.items(), key=lambda item: item[1], reverse=True)
+                for record in tag_list:
+                    key, value = record[0], record[1]
+                    tmp_data = '{}共有{}部，均分{}'.format(key, Tag.COUNT[key], value) + "\n"
+                    f.write(tmp_data.encode("utf-8"))
