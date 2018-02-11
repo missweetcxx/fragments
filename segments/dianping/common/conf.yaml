@@ -1,0 +1,23 @@
+---
+HTTP:
+  SHOPLIST_URL: 'http://www.dianping.com/mylist/ajax/shoprank'
+  USER_AGENT : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+
+PATH:
+  SHOPLIST_ITEMS: '//*[@class="ranklist-table"]/table/tbody/tr'
+  SHOPLIST_ITEMS_ : '//*[@class="content-ranklist"]/section'
+  SHOPLIST_ID: 'td/div[@class="td-div-1"]/text()'
+  MOVIE_TITLE: 'div[@class="info"]/div[@class="hd"]/a/span[1]/text()'
+  MOVIE_SCORE: 'div[@class="info"]/div[@class="bd"]/div[@class="star"]/span[@class="rating_num"]/text()'
+  MOVIE_DESC: 'div[@class="info"]/div[@class="bd"]/p[@class="quote"]/span[@class="inq"]/text()'
+  MOVIE_IMG_ADDR: 'div[@class="pic"]/a/img/@src'
+  MOVIE_INFO: 'div[@class="info"]/div[@class="bd"]/p[1]/text()'
+
+FILE:
+  AVG_PRICE_BY_CITY_POP: 'result_files/city_avg_price_by_pop.txt'
+  IMAGES_DIR: 'result_files/Top250_movie_images'
+  CLASSIFICATION: 'result_files/douban_movie_classification.txt'
+
+FORMAT:
+  CITY_OUTPUT: 'city:{}, title: {}, score:{}, description:{}'
+
