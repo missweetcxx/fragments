@@ -9,7 +9,7 @@ from segments.douban.config import CONFIG
 
 class MovieDatum:
     @staticmethod
-    def get_movie_etree(id, url=CONFIG['HTTP']['URL'], headers=HEADER):
+    def get_movie_etree(id, url=CONFIG['HTTP']['MOVIE_URL'], headers=HEADER):
         movie_etree = list()
         response = requests.get(url, headers=headers, params=dict(start=id))
         reponse_etree = etree.HTML(response.content)

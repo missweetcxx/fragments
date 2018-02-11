@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 import os
 
+from segments.douban.common.constants import FilePath
 from segments.douban.config import CONFIG, ROOT_PATH
 
 
 class ClearFile:
     @staticmethod
     def clear_records():
-        if os.path.isfile(CONFIG['FILE']['RECORDS']):
-            os.remove(CONFIG['FILE']['RECORDS'])
+        if os.path.isfile(FilePath.RECORDS_PATH):
+            os.remove(FilePath.RECORDS_PATH)
 
     @staticmethod
     def clear_imgs():
@@ -21,8 +22,8 @@ class ClearFile:
 
     @staticmethod
     def clear_classification():
-        if os.path.isfile(CONFIG['FILE']['CLASSIFICATION']):
-            os.remove(CONFIG['FILE']['CLASSIFICATION'])
+        if os.path.isfile(FilePath.CLASSIFY_PATH):
+            os.remove(FilePath.CLASSIFY_PATH)
 
     @staticmethod
     def clear_all():
