@@ -1,11 +1,18 @@
 ---
 HTTP:
   SHOPLIST_URL: 'http://www.dianping.com/mylist/ajax/shoprank'
+  EX_SHOPLIST_URL: 'http://www.dianping.com/{}/food'
   USER_AGENT : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
 
 
+PATH:
+  EX_SHOP_ITEMS : '//*[@id="searchList"]/dl/dd'
+  EX_SHOP_PRICES: '//*[@class="average"]/text()'
+
+
 FILE:
-  AVG_PRICE_BY_CITY_POP: 'result_files/city_avg_price_by_pop.txt'
+  AVG_PRICE_BY_CITY_POP: 'result_files/city_avg_price.txt'
+  EX_AVG_PRICE_BY_CITY: 'result_files/ex_city_avg_price.txt'
 
 
 FORMAT:

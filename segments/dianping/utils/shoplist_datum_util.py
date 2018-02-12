@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import requests
+from lxml import etree
 
 from segments.dianping.common.constants import HEADER
 from segments.dianping.config import CONFIG
@@ -28,3 +29,15 @@ class ShoplistDatum:
             avg_price_sum += item['avgPrice']
         avg_price_avg = avg_price_sum / 100
         return avg_price_avg
+
+    @staticmethod
+    def get_exotic_shoplist_items(city):
+        response = requests.get(CONFIG['HTTP']['EX_SHOPLIST_URL'].format(city), headers=HEADER)
+        reponse_etree = etree.HTML(response.content)
+        shop_items = reponse_etree.xpath(CONFIG['PATH']['EX_SHOP_ITEMS'])[0]
+
+        avg_price_list = [int(item) for item in shop_items.xpath(CONFIG['PATH']['EX_SHOP_PRICES'])]
+
+        avg_price = round(sum(avg_price_list) / len(avg_price_list), 2)
+
+        return avg_price

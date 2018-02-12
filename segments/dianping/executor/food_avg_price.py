@@ -19,9 +19,9 @@ def get_food_avg_price_aggregation_by_popscore(rank_type):
 
 
 def city_avg_price_output(rank_type):
+    city_avg_price = get_food_avg_price_aggregation_by_popscore(rank_type)
+    sorted_list = sorted(city_avg_price.items(), key=lambda item: item[1], reverse=True)
     with open(FilePath.AVG_PRICE_BY_CITY_POP, 'ab+') as f:
-        city_avg_price = get_food_avg_price_aggregation_by_popscore(rank_type)
-        sorted_list = sorted(city_avg_price.items(), key=lambda item: item[1], reverse=True)
         f.write('{}前100餐厅人均消费：\n'.format(RankType.get_cn_desc_by_value(rank_type)).encode('utf-8'))
         for item in sorted_list:
             record = '{}:{}元'.format(item[0], item[1]) + "\n"
@@ -32,7 +32,7 @@ def city_avg_price_output(rank_type):
 def main():
     ClearFile.clear_avg_price_records()
 
-    city_avg_price_output(rank_type=RankType.TASTE)
+    city_avg_price_output(rank_type=RankType.POPSCORE)
 
 
 if __name__ == '__main__':

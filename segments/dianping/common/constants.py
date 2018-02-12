@@ -68,3 +68,7 @@ class RankType:
     @staticmethod
     def get_cn_desc_by_value(value):
         return RankType._VALUES_TO_CN_DESC.get(value)
+
+
+EX_CITIES = ['tokyo', 'paris', 'singapore', 'bangkok', 'losangeles', 'hongkong', 'taipei', 'london',
+             'kualalumpur', 'hualien', 'bali', 'chiangmai', 'kaohsiung', 'macau']
