@@ -1,0 +1,17 @@
+---
+HTTP:
+  USER_AGENT : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+
+
+FILE:
+  MASK: 'resources/flower.jpg'
+  FONT: 'resources/msyh.ttf'
+  ARTICLE: 'resources/article.txt'
+  STOPWORDS: 'resources/stopwords.txt'
+  RESULT_FILE: 'result_files/word_cloud.png'
+
+
+FORMAT:
+  TOP_MOVIE_OUTPUT: 'id:{}, title: {}, score:{}, description:{}'
+  TOP_BOOK_OUTPUT: 'title: {}, score:{}, description:{}'
+  IMG: "./{}/{}_{}.jpg"
