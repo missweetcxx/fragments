@@ -8,6 +8,7 @@ from segments.wordcloud.common.constants import FilePath
 class StopWords:
     @staticmethod
     def filter(texts):
+        jieba.add_word('')
         word_list = []
         word_generator = jieba.cut(texts, cut_all=False)
         with open(FilePath.STOPWORDS_PATH, encoding='utf-8') as f:
