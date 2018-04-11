@@ -72,3 +72,4 @@ link.add_head(3)
 link.add_tail(4)
 link.add_tail(5)
 link.remove(2)
+
