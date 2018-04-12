@@ -9,13 +9,13 @@ class LinkedList(object):
         self.next = None
 
     # insert new node at start
-    def add_head(self, data):
+    def insert_before(self, data):
         new_node = Node(data)
         new_node.set_next(self.next)
         self.next = new_node
 
     # insert new node at the end
-    def add_tail(self, data):
+    def insert_after(self, data):
         checking = self.next
         while checking is not None:
             if checking.get_next() is None:
@@ -63,23 +63,14 @@ class LinkedList(object):
             previous = checking
             checking = checking.get_next()
 
+    def is_empty(self):
+        return self.next is None
 
-def is_empty(self):
-    return self.next is None
-
-
-# the size of linked_list
-def size(self):
-    count = 0
-    counting = self.next
-    while counting is not None:
-        count += 1
-        counting = counting.get_next()
-    return count
-
-
-link = LinkedList()
-link.add_head(1)
-link.add_head(2)
-link.add_head(3)
-link.add_head(2)
+    # the size of linked_list
+    def size(self):
+        count = 0
+        current = self.next
+        while current is not None:
+            count += 1
+            current = current.get_next()
+        return count
