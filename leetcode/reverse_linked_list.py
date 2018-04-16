@@ -5,7 +5,7 @@
 #
 
 """
-205. Reverse Linked List
+206. Reverse Linked List
 Reverse a singly linked list.
 """
 
@@ -23,13 +23,13 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        previous = None
+        temp = None
         while head:
-            temp = head
-            temp.next = previous
-            previous = temp
+            current = head
             head = head.next
-        return previous
+            current.next = temp
+            temp = current
+        return temp
 
     def reverseList2(self, head):
         return self._reverse(head)
@@ -58,6 +58,7 @@ class Test:
             assert output.data is input_list[point]
             output = output.next
             point -= 1
+        assert point is 0
 
     def test_empty(self):
         head = LinkedList()
