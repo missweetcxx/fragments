@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from xml import etree
-
 import requests
+from lxml import etree
 
 from projects.dianping.common.constants import HEADER
 from projects.dianping.config import CONFIG
