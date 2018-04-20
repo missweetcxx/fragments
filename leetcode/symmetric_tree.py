@@ -71,16 +71,14 @@ from segments.binary_tree.binary_tree import BinaryTree
 class Test:
     def test_true(self):
         s = BinaryTree()
-        for x in [1, 2, 2, 3, 4, 4, 3, 1, 2, 3, 4, 4, 3, 2, 1]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 2, 3, 4, 4, 3, 1, 2, 3, 4, 4, 3, 2, 1])
 
         res = Solution()
         assert res.isSymmetric2(s.root) is True
 
     def test_false(self):
         s = BinaryTree()
-        for x in [1, 2, 2, None, 3, None, 3]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 2, None, 3, None, 3])
 
         res = Solution()
         assert res.isSymmetric(s.root) is False

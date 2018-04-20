@@ -55,18 +55,15 @@ from segments.binary_tree.binary_tree import BinaryTree
 class Test:
     def test_true(self):
         s = BinaryTree()
-        for x in [1, 2, 4, 1]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 4, 1])
         t = s
         res = Solution()
         assert res.isSameTree(s.root, t.root) is True
 
     def test_false(self):
         s = BinaryTree()
-        for x in [1, 2, 3, 4, 5]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 4, 1])
         t = BinaryTree()
-        for x in [1, 3, 2, 3]:
-            t.addNode(x)
+        t.gen_tree([1, 3, 2, 3])
         res = Solution()
         assert res.isSameTree2(s.root, t.root) is False

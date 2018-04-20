@@ -71,23 +71,20 @@ from segments.binary_tree.binary_tree import BinaryTree
 class Test:
     def test_true(self):
         s = BinaryTree()
-        for x in [1, 2, 3, 4, 5]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 3, 4, 5])
 
         t = BinaryTree()
-        for x in [2, 4, 5]:
-            t.addNode(x)
+        t.gen_tree([2, 4, 5])
 
         res = Solution()
         assert res.isSubtree_2(s.root, t.root) is True
 
     def test_false(self):
         s = BinaryTree()
-        for x in [1, 2, 3, 4, 5]:
-            s.addNode(x)
+        s.gen_tree([1, 2, 3, 4, 5])
+
         t = BinaryTree()
-        for x in [2, 5, 4]:
-            t.addNode(x)
+        t.gen_tree([2, 5, 4])
 
         res = Solution()
         assert res.isSubtree_2(s.root, t.root) is False
