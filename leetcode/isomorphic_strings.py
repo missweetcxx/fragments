@@ -46,5 +46,5 @@ class Solution(object):
 
 
 s = Solution()
-res = s.isIsomorphic2('title', 'paper')
+res = s.isIsomorphic1('title', 'paper')
 print(res)

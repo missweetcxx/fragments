@@ -12,10 +12,12 @@ For example:
 
 Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
 """
+from functools import reduce
 
 
 class Solution(object):
-    def addDigits(self, num):
+    @staticmethod
+    def add_digits_a(num):
         """
         :type num: int
         :rtype: int
@@ -27,6 +29,14 @@ class Solution(object):
             num = s
         return num
 
+    @staticmethod
+    def add_digits_b(num):
+        sum = int(reduce(lambda x, y: int(x) + int(y), str(num)))
+        if sum < 10:
+            return sum
+        else:
+            return Solution.add_digits_b(sum)
+
 
 import pytest
 
@@ -34,5 +44,5 @@ import pytest
 class Test:
     @pytest.mark.parametrize('num, expect', [(38, 2), (0, 0), (10, 1), (9, 9)])
     def test_normal(self, num, expect):
-        res = Solution()
-        assert res.addDigits(num) is expect
+        assert Solution.add_digits_a(num) is expect
+        assert Solution.add_digits_b(num) is expect

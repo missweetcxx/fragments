@@ -31,10 +31,10 @@ class Solution(object):
         def check(root):
             if root is None:
                 return 0
-            if root.left is None and root.right is None:
-                return 1
-            elif root.left.val is None and root.right.val is None:
-                return 1
+            if root.val is None and root.left is None and root.right is None:
+                return 0
+            if root.val is None and root.left.val is None and root.right.val is None:
+                return 0
             left = check(root.left)
             right = check(root.right)
             if left == -1 or right == -1 or abs(left - right) > 1:
