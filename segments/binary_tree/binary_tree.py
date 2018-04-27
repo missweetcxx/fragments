@@ -14,12 +14,12 @@ class BinaryTree(object):
         pass
 
     # create a binary tree with nodes
-    def addNode(self, val):
+    def _add_node(self, val):
         # create root node of binary tree
         nodeStack = [self.root, ]
 
         # if root node hasn't been created
-        if self.root == None:
+        if self.root is None:
             self.root = Node(val)
             print("Successfully add root node as {0}!".format(self.root.val))
             return
@@ -42,3 +42,26 @@ class BinaryTree(object):
 
             nodeStack.insert(0, p_node.left)
             nodeStack.insert(0, p_node.right)
+
+    def gen_tree(self, nums):
+        for x in nums:
+            self._add_node(x)
+
+    # def __init__(self):
+    #     self.root = Node(None)
+    #     self.myQueue = []
+    #
+    # def add_node(self, elem):
+    #     node = Node(elem)
+    #     if self.root.val is None:
+    #         self.root = node
+    #         self.myQueue.append(self.root)
+    #     else:
+    #         tree_node = self.myQueue[0]
+    #         if tree_node.left is None:
+    #             tree_node.left = node
+    #             self.myQueue.append(tree_node.left)
+    #         else:
+    #             tree_node.right = node
+    #             self.myQueue.append(tree_node.right)
+    #             self.myQueue.pop(0)
