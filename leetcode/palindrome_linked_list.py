@@ -64,7 +64,7 @@ def test_true():
     for item in input_list:
         head.insert_after(item)
     res = Solution()
-    assert res.is_p(head.next) is True
+    assert res.isPalindrome2(head.next) is True
 
 
 def test_false():
