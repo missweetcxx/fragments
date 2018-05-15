@@ -1,0 +1,12 @@
+---
+DB_STAGING:
+  HOST: ''
+  PORT: '3306'
+  USERNAME: ''
+  PASSWORD: ''
+  DATABASE: ''
+
+LOG:
+  LOG_FORMAT: '%(asctime)s %(funcName)s[line:%(lineno)d] %(levelname)s: %(message)s'
+  LOG_DATE_FORMAT: '%Y-%m-%d %H:%M:%S'
+  LOG_NAME: 'flask.log'
