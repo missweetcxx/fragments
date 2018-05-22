@@ -85,3 +85,4 @@ class LinkedList(object):
             count += 1
             current = current.get_next()
         return count
+
