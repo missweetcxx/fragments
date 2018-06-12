@@ -8,6 +8,17 @@ class LinkedList(object):
     def __init__(self):
         self.next = None
 
+    def insert_items(self, items):
+        temp = None
+        for d in items:
+            new_node = Node(d)
+            if temp is None:
+                temp = new_node
+                self.next = temp
+            else:
+                temp.next = new_node
+                temp = new_node
+
     # insert new node at start
     def insert_before(self, data):
         new_node = Node(data)
@@ -74,3 +85,4 @@ class LinkedList(object):
             count += 1
             current = current.get_next()
         return count
+
