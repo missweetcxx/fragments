@@ -47,3 +47,24 @@ class InsertSort:
                 else:
                     break
         return my_list
+
+    @staticmethod
+    def solution_4(my_list):
+        for i in range(1, len(my_list)):
+            cur = my_list[i]
+            j = i - 1
+            while j >= 0 and my_list[j] > cur:
+                my_list[j + 1] = my_list[j]
+                j = j - 1
+            my_list[j + 1] = cur
+        return my_list
+
+    @staticmethod
+    def solution_5(my_list):
+        for i in range(1, len(my_list)):
+            cur = my_list[i]
+            for j in range(0, i):
+                if my_list[i] < my_list[j]:
+                    my_list = my_list[:i] + my_list[i + 1:]
+                    my_list.insert(j, cur)
+        return my_list

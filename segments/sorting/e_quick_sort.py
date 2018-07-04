@@ -81,3 +81,14 @@ class QuickSort:
 
         quick_sort_helper(input_list, 0, len(input_list) - 1)
         return input_list
+
+    @staticmethod
+    def solution_3(my_list):
+        if len(my_list) < 2:
+            return my_list
+        else:
+            pivot = my_list[0]
+            less = [i for i in my_list[1:] if i <= pivot]
+            greater = [i for i in my_list[1:] if i > pivot]
+
+            return QuickSort.solution_3(less) + [pivot] + QuickSort.solution_3(greater)
