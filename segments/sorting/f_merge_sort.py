@@ -28,3 +28,33 @@ class MergeSort:
 
         else:
             return my_list
+
+
+rr = MergeSort.merge_sort([2, 3, 1, 4, 2, 4, 5])
+print(rr)
+
+
+class Sort:
+    def mergesort(self, alist):
+        if len(alist) <= 1:
+            return alist
+        mid = len(alist) // 2
+        left = self.mergesort(alist[:mid])
+        right = self.mergesort(alist[mid:])
+        return Sort._merge_sorted_array(left, right)
+
+    @staticmethod
+    def _merge_sorted_array(A, B):
+        sorted_array = []
+        l = 0
+        r = 0
+        while l < len(A) and r < len(B):
+            if A[l] < B[r]:
+                sorted_array.append(A[l])
+                l += 1
+            else:
+                sorted_array.append(B[r])
+                r += 1
+        sorted_array += A[l:]
+        sorted_array += B[r:]
+        return sorted_array
